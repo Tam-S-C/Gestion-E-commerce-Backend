@@ -1,4 +1,4 @@
-<h1><img src="https://img.shields.io/badge/GESTION ECOMMERCE-BACKEND-32286E?logo=null&logoColor=black&style=flat" width="340" height="32"/></h1>
+<h1><img src="https://img.shields.io/badge/GESTION ECOMMERCE-BACKEND-32286E?logo=null&logoColor=black&style=flat" width="320" height="32"/></h1>
 
 > Curso: Programación Backend I: Desarrollo Avanzado de Backend
 
@@ -20,4 +20,6 @@ para gestionar los productos y carritos de compra en un e-commerce.
 - [x] Uso de la librería **Express** para crear un servidor web en Node.js.
 - [x] Uso de la librería **UUID** para generar un identificador único para cada producto.
 - [x] Uso de la librería **fs** para leer y escribir archivos JSON.
+- [x] Uso de la librería **path** para obtener la ruta del archivo JSON.
+- [x] Gestión de productos y carritos de compra con getAllProducts, getProductById, createProduct, updateProduct, deleteProduct.
 
