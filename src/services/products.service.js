@@ -78,8 +78,7 @@ class ProductsService {
       price,
       status,
       stock,
-      category,
-      thumbnails: ["rutafoto1", "rutafoto2", "rutafoto3"],
+      category
     };
 
     this.products.push(product);
