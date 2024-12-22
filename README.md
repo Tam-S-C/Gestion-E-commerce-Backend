@@ -20,3 +20,4 @@ para gestionar los productos y carritos de compra en un e-commerce.
 - [x] Uso de la librería **Express** para crear un servidor web en Node.js.
 - [x] Uso de la librería **UUID** para generar un identificador único para cada producto.
 - [x] Uso de la librería **fs** para leer y escribir archivos JSON.
+

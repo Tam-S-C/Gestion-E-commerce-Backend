@@ -1,6 +1,7 @@
 import fs from "node:fs";
 import { v4 as uuid } from "uuid";
 
+
 class ProductsService {
   path;
   products = [];
