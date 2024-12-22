@@ -1,4 +1,4 @@
-<h1><img src="https://img.shields.io/badge/GESTION ECOMMERCE-BACKEND-32286E?logo=null&logoColor=black&style=flat" width="360" height="32"/></h1>
+<h1><img src="https://img.shields.io/badge/GESTION ECOMMERCE-BACKEND-32286E?logo=null&logoColor=black&style=flat" width="340" height="32"/></h1>
 
 > Curso: Programación Backend I: Desarrollo Avanzado de Backend
 
