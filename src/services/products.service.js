@@ -96,7 +96,7 @@ class ProductsService {
   // updateProduct
   /**
    * @param {Object} product - Datos actualizados del producto.
-   * @returns {Promise<Object|null>} Promesa que resuelve con el producto actualizado o `null` si no se encuentra.
+   * @returns {Promise<Object|null>} Promesa que resuelve con el producto actualizado o null si no se encuentra.
    */
   // ---------------------------------------
 

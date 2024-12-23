@@ -11,7 +11,6 @@ productsRoutes.get("/", async (req, res) => {
     const products = await productService.getAllProducts();
     
     res.status(200).json(products);
-    //res.send("<h1>Hola mundo</h1>")
 });
 
 //GET BY ID
