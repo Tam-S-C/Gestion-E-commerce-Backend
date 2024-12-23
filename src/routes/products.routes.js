@@ -32,6 +32,10 @@ productsRoutes.get("/:id", async (req, res) => {
 
 productsRoutes.post("/", async (req, res) => {
     const { title, description, code, price, status, stock, category } = req.body;
+
+    if (!title || !description || !code || !price || !status || !stock || !category)
+
+        return res.status(400).json({ error: "Todos los campos son requeridos" });
     
     try {
     const product = await productService.createProduct({ title, description, code, price, status, stock, category});
