@@ -17,6 +17,7 @@ productsRoutes.get("/", async (req, res) => {
 
 productsRoutes.get("/:id", async (req, res) => {
     const { id } = req.params;
+    
     const product = await productService.getProductById({ id });
 
     if (!product) { 
@@ -77,3 +78,4 @@ productsRoutes.delete("/:id", async (req, res) => {
         return res.status(500).json({ message: "Error al eliminar el producto." });
     }
 });
+
