@@ -11,8 +11,26 @@ body {
 
 h1 {
     color: white;
-    font-size: 3rem;
+    font-size: 48px;
     text-align: center;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
+}
+
+h4 {
+    color: rgb(216, 230, 255);
+    font-size: 32px;
+    font-weight: lighter;
+    text-align: center;
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+
+p {
+    color: rgb(202, 211, 226);
+    font-size: 16px;
+    font-weight: lighter;
+    text-align: center;
+    margin-top: 8px;
+    margin-bottom: 8px;
 }
 

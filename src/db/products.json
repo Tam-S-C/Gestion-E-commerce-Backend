@@ -13,5 +13,20 @@
       "fotoEjemplo-2.jpg",
       "fotoEjemplo-3.jpg"
     ]
+  },
+  {
+    "id": "63b2b795-6deb-4742-aaf5-2d77d6871f9f",
+    "title": "Prod 5",
+    "description": "Prod 5 stickers",
+    "code": "05",
+    "price": 500,
+    "status": true,
+    "stock": 20,
+    "category": "stickers",
+    "thumbnails": [
+      "fotoEjemplo-1.jpg",
+      "fotoEjemplo-2.jpg",
+      "fotoEjemplo-3.jpg"
+    ]
   }
 ]
