@@ -21,7 +21,7 @@ productsRoutes.get("/:id", async (req, res) => {
     const product = await productService.getProductById({ id });
 
     if (!product) { 
-       return res.status(404).json({ message: "No se encontró el producto." });
+       return res.status(404).json({ message: "No se encontró el producto, ID inválido." });
     }
 
     res.status(200).json(product);
