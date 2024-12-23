@@ -17,9 +17,11 @@ para gestionar los productos y carritos de compra en un e-commerce.
 
 -----------------------
 
-- [x] Uso de la librería **Express** para crear un servidor web en Node.js.
+- [x] Gestión de productos y carritos de compra con getAllProducts, getProductById, createProduct, updateProduct, deleteProduct. 
+ ↓ 1(GET / PUT / POST / DELETE)
+- [x] Uso de **postman** para probar los endpoints.
+- [x] Uso de la librería **Express** para crear un servidor web en Node **"SERVER.JS"**.
 - [x] Uso de la librería **UUID** para generar un identificador único para cada producto.
 - [x] Uso de la librería **fs** para leer y escribir archivos JSON.
 - [x] Uso de la librería **path** para obtener la ruta del archivo JSON.
-- [x] Gestión de productos y carritos de compra con getAllProducts, getProductById, createProduct, updateProduct, deleteProduct.
 
