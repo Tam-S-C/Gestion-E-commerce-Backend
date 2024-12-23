@@ -13,20 +13,5 @@
       "fotoEjemplo-2.jpg",
       "fotoEjemplo-3.jpg"
     ]
-  },
-  {
-    "id": "bbb3b366-3533-4228-a863-f59c7c6e3ac1",
-    "title": "Prod 3",
-    "description": "Prod 3 de prueba",
-    "code": "03",
-    "price": 200,
-    "status": true,
-    "stock": 15,
-    "category": "agendas",
-    "thumbnails": [
-      "fotoEjemplo-1.jpg",
-      "fotoEjemplo-2.jpg",
-      "fotoEjemplo-3.jpg"
-    ]
   }
 ]
