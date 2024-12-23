@@ -78,7 +78,8 @@ class ProductsService {
       price,
       status,
       stock,
-      category
+      category,
+      thumbnails: [ "fotoEjemplo-1.jpg", "fotoEjemplo-2.jpg", "fotoEjemplo-3.jpg" ], 
     };
 
     this.products.push(product);
@@ -88,7 +89,6 @@ class ProductsService {
       return product;
     } catch (error) {
         console.error("Error al crear el producto:", error);
-        throw new Error("No se pudo guardar el producto.");
     }
   }
 
@@ -101,6 +101,7 @@ class ProductsService {
   // ---------------------------------------
 
   async updateProduct({
+    id,
     title,
     description,
     code,
@@ -109,11 +110,13 @@ class ProductsService {
     stock,
     category,
   }) {
+    
     const product = this.products.find((product) => product.id === id);
 
     if (!product) {
       return null;
     }
+
     product.title = title ?? product.title;
     product.description = description ?? product.description;
     product.code = code ?? product.code;
@@ -129,8 +132,8 @@ class ProductsService {
       await this.saveProductOnFile();
       return product;
     } catch (error) {
-        console.error("Error al actualizar el producto:", error);
-        throw new Error("No se pudo actualizar el producto.");
+      console.error("Error al actualizar el producto:", error);
+      throw new Error("No se pudo actualizar el producto.");
     }
   }
 
@@ -174,7 +177,7 @@ class ProductsService {
         JSON.stringify(this.products, null, 2)
       );
     } catch (error) {
-      console.error("Error al guardar el producto");
+      console.error("Error al guardar el archivo de productos:", error); 
     }
   }
 }

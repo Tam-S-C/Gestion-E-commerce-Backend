@@ -1,0 +1,47 @@
+[
+  {
+    "id": "05ccebc2-2c77-439d-a7d5-ddc2e7ffd6a0",
+    "title": "Prod editado",
+    "description": "Prod 1 de prueba",
+    "code": "01",
+    "price": 100,
+    "status": true,
+    "stock": 10,
+    "category": "agendas",
+    "thumbnails": [
+      "fotoEjemplo-1.jpg",
+      "fotoEjemplo-2.jpg",
+      "fotoEjemplo-3.jpg"
+    ]
+  },
+  {
+    "id": "126a9921-d0e8-4b0c-ac2e-71154ba12ca7",
+    "title": "Prod 2",
+    "description": "Prod 2 de prueba",
+    "code": "02",
+    "price": 100,
+    "status": true,
+    "stock": 10,
+    "category": "agendas",
+    "thumbnails": [
+      "fotoEjemplo-1.jpg",
+      "fotoEjemplo-2.jpg",
+      "fotoEjemplo-3.jpg"
+    ]
+  },
+  {
+    "id": "bbb3b366-3533-4228-a863-f59c7c6e3ac1",
+    "title": "Prod 3",
+    "description": "Prod 3 de prueba",
+    "code": "03",
+    "price": 200,
+    "status": true,
+    "stock": 15,
+    "category": "agendas",
+    "thumbnails": [
+      "fotoEjemplo-1.jpg",
+      "fotoEjemplo-2.jpg",
+      "fotoEjemplo-3.jpg"
+    ]
+  }
+]

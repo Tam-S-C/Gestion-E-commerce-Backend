@@ -3,7 +3,7 @@ import { productService } from "./services/products.service.js";
 
 
 const app = express();
-const PORT = 8080;
+const port = 8080;
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true}));
@@ -40,7 +40,7 @@ app.post("/api/products", async (req, res) => {
     const { title, description, code, price, status, stock, category } = req.body;
     
     try {
-    const product = await productService.createProduct({ title, description, code, price, status, stock, category });
+    const product = await productService.createProduct({ title, description, code, price, status, stock, category});
 
     res.status(201).json(product);
     } catch (error) {
@@ -87,6 +87,6 @@ app.delete("/api/products/:id", async (req, res) => {
 
 // PORT
 
-app.listen(8080, () => {
-    console.log("Server listening on port http://localhost:8080");
-})
+app.listen(port, () => {
+    console.log(`Server running at http://localhost:${port}`);
+});
