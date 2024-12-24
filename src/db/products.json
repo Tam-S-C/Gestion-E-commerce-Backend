@@ -28,5 +28,20 @@
       "fotoEjemplo-2.jpg",
       "fotoEjemplo-3.jpg"
     ]
+  },
+  {
+    "id": "30709c0d-9226-45b2-8c25-accda507e057",
+    "title": "Prod 6",
+    "description": "Prod 6 stickers",
+    "code": "06",
+    "price": 1000,
+    "status": true,
+    "stock": 10,
+    "category": "stickers",
+    "thumbnails": [
+      "fotoEjemplo-1.jpg",
+      "fotoEjemplo-2.jpg",
+      "fotoEjemplo-3.jpg"
+    ]
   }
 ]

@@ -31,16 +31,37 @@ productsRoutes.get("/:id", async (req, res) => {
 //POST
 
 productsRoutes.post("/", async (req, res) => {
-    const { title, description, code, price, status, stock, category } = req.body;
+    const { title, description, code, price, status, stock, category, thumbnails } = req.body;
 
-    if (!title || !description || !code || !price || !status || !stock || !category)
-
+    if (!title || !description || !code || !price || !stock || !category) {
         return res.status(400).json({ error: "Todos los campos son requeridos" });
-    
-    try {
-    const product = await productService.createProduct({ title, description, code, price, status, stock, category});
+    }
 
-    res.status(201).json(product);
+    if (
+        typeof title !== "string" || 
+        typeof description !== "string" || 
+        typeof code !== "string" || 
+        typeof price !== "number" || 
+        typeof stock !== "number" || 
+        typeof category !== "string" ||
+        (thumbnails && !Array.isArray(thumbnails))
+    ) {
+        return res.status(400).json({ error: "Datos inválidos en el cuerpo de la solicitud" });
+    }
+
+    try {
+        const product = await productService.createProduct({ 
+            title, 
+            description, 
+            code, 
+            price, 
+            status: status ?? true, 
+            stock, 
+            category, 
+            thumbnails: thumbnails ?? [] 
+        });
+
+        res.status(201).json(product);
     } catch (error) {
         return res.status(500).json({ message: "Error al crear el producto." });
     }
