@@ -1,5 +1,6 @@
 import fs from "node:fs";
 import { v4 as uuid } from "uuid";
+import { productService } from "./products.service.js";
 
 class CartsService {
   path;
@@ -31,6 +32,7 @@ class CartsService {
    * @returns {Object} Devuelve el carrito con el id pasado por parámetro.
    */
   // ---------------------------------------
+
   async getCartById({ id }) {
     const cart = this.carts.find((cart) => cart.id === id);
     return cart;
@@ -42,6 +44,7 @@ class CartsService {
    * @returns {Promise<Object>} Promesa que resuelve con el carrito creado.
    */
   // ---------------------------------------
+
   async createCart() {
     const id = uuid();
 
@@ -61,10 +64,45 @@ class CartsService {
     }
   }
 
+// ---------------------------------------
+// addProductToCart
+/**
+   * @param {string} cartId - ID del carrito.
+   * @param {string} productId - ID del producto a agregar.
+   * @returns {Promise<Object>} Promesa que resuelve con el carrito actualizado.
+ */
+// ---------------------------------------
+
+async addProductToCart({ cartId, productId }) {
+
+  const cart = this.carts.find((cart) => cart.id === cartId);
+  if (!cart) throw new Error("El carrito no existe.");
+
+  const product = await productService.getProductById({ id: productId });
+  if (!product) throw new Error("El producto no existe.");
+
+  const productIndex = cart.products.findIndex((item) => item.product === productId);
+  if (productIndex !== -1) {
+      cart.products[productIndex].quantity += 1;
+  } else {
+      cart.products.push({ product: productId, quantity: 1 });
+  }
+
+  try {
+    await this.saveCartOnFile();
+    return cart;
+  } catch (error) {
+    console.error("Error al agregar producto al carrito:", error);
+    throw new Error("No se pudo agregar el producto al carrito.");
+  }
+}
+
   // ---------------------------------------
   // updateCart
-  /**
+ /**
    * @param {Object} cart - Datos actualizados del carrito.
+   * @param {string} id - ID del carrito a actualizar.
+   * @param {Array} products - Array de productos actualizados.
    * @returns {Promise<Object|null>} Promesa que resuelve con el carrito actualizado o null si no se encuentra.
    */
   // ---------------------------------------
@@ -97,6 +135,7 @@ class CartsService {
    * @returns {Promise<void>} Promesa que se resuelve cuando los carritos se han guardado correctamente.
    */
   // ----------------------------------------
+
   async saveCartOnFile() {
     try {
       await fs.promises.writeFile(

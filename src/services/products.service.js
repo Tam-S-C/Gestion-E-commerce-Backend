@@ -70,6 +70,10 @@ class ProductsService {
       throw new Error("El producto ya existe");
     }
 
+    if (this.products.some((product) => product.code === code)) {
+      throw new Error(`El código "${code}" ya está en uso por otro producto.`);
+    }
+
     const product = {
       id,
       title,
@@ -89,6 +93,7 @@ class ProductsService {
       return product;
     } catch (error) {
         console.error("Error al crear el producto:", error);
+        throw new Error("No se pudo crear el producto.");
     }
   }
 
@@ -113,8 +118,11 @@ class ProductsService {
     
     const product = this.products.find((product) => product.id === id);
 
-    if (!product) {
-      return null;
+    if (
+      code &&
+      this.products.some((prod) => prod.code === code && prod.id !== id)
+    ) {
+      throw new Error(`El código "${code}" ya está en uso por otro producto.`);
     }
 
     product.title = title ?? product.title;
@@ -178,6 +186,7 @@ class ProductsService {
       );
     } catch (error) {
       console.error("Error al guardar el archivo de productos:", error); 
+      throw new Error("Error al guardar el archivo.");
     }
   }
 }

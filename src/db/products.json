@@ -30,10 +30,10 @@
     ]
   },
   {
-    "id": "30709c0d-9226-45b2-8c25-accda507e057",
-    "title": "Prod 6",
-    "description": "Prod 6 stickers",
-    "code": "06",
+    "id": "fbfbd1bb-77ff-490a-91c1-0aa7788309b9",
+    "title": "Prod 7",
+    "description": "Prod 7 stickers",
+    "code": "07",
     "price": 1000,
     "status": true,
     "stock": 10,
