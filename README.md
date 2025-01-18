@@ -14,12 +14,25 @@
 * Tutor Adjunto: Paola Silvina Coronel
 * Tutor Regular CoderAsk: Victoria Rodriguez Mora
 
+
+<h3> > Segunda Pre-Entrega</h3>
+Configuración del proyecto para que trabaje con Handlebars y Websocket.
+
+- [x] Uso de motor de plantillas Handlebars, librería para renderizar las vistas: home.hbs y realTimeProducts.hbs.
+- [x] Websocket para actualizar la lista de productos en tiempo real con la instalación de socket.io, tanto al agregar como al eliminar un producto.
+- [x] Se utilizó Materialize, librería para crear un diseño de página, más estilos propios.
+- [x] Se utilizó Morgan, middleware para ver en consola las peticiones
+
+
+<br>
+
+_____________________________________________________________________________
+<br>
+
 <h3> > Primer Pre-Entrega</h3>
 Realización de un servidor que contiene los endpoints y servicios necesarios 
 para gestionar los productos y carritos de compra en un e-commerce.
 
-
------------------------
 
 - [x] Gestión de productos y carritos de compra con getAllProducts, 
 getProductById, createProduct, updateProduct, deleteProduct. 

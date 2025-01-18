@@ -1,7 +1,10 @@
 import { Router } from "express";
 import { productService } from "../services/products.service.js";
+import { io } from "../server.js";
 
 export const productsRoutes = Router();
+
+export const products = [];
 
 // RUTAS-ROUTES => ENDPOINTS
 
@@ -9,7 +12,6 @@ export const productsRoutes = Router();
 
 productsRoutes.get("/", async (req, res) => {
     const products = await productService.getAllProducts();
-    
     res.status(200).json(products);
 });
 
@@ -32,6 +34,9 @@ productsRoutes.get("/:id", async (req, res) => {
 
 productsRoutes.post("/", async (req, res) => {
     const { title, description, code, price, status, stock, category, thumbnails } = req.body;
+    products.push(req.body);
+
+    io.emit("productAdded", req.body);
 
     if (!title || !description || !code || !price || !stock || !category) {
         return res.status(400).json({ error: "Todos los campos son requeridos" });
