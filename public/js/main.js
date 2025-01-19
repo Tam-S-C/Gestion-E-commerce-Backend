@@ -21,7 +21,7 @@ function createProduct(product){
      -
      ${product.description}
      -
-     Código:${product.code}
+     Código: ${product.code}
      - 
      Stock: ${product.stock}
      - 
@@ -31,3 +31,4 @@ function createProduct(product){
 
     return li;
 }
+

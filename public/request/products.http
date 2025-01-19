@@ -11,9 +11,14 @@ Content-Type: application/json
   {
     "title": "Agenda Friends",
     "description": "Perpetua, para cualquier año",
-    "code": "099",
+    "code": "091",
     "price": 10000,
     "stock": 10,
     "category": "agendas",
     "status": true
   }
+
+
+//  Recordar que son obligatorios los campos: 
+//  title, description, code, price, stock, category, status 
+//  y que el CODE no se debe repetir!!

@@ -9,5 +9,4 @@ viewsRoutes.get("/", (req, res) => {
 
 viewsRoutes.get("/realTimeProducts", (req, res) => {
     res.render("realTimeProducts");
-
 });

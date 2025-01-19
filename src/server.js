@@ -49,6 +49,5 @@ export const io = new Server(server);
 
 io.on("connection", (socket) => {
     console.log("Nuevo cliente conectado:", socket.id);    
-
     socket.emit("init", products);
 });

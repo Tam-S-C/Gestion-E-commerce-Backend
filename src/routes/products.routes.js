@@ -4,7 +4,7 @@ import { io } from "../server.js";
 
 export const productsRoutes = Router();
 
-export const products = [];
+export const products = await productService.getAllProducts();
 
 // RUTAS-ROUTES => ENDPOINTS
 

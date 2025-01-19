@@ -1,39 +1,9 @@
 [
   {
     "id": "05ccebc2-2c77-439d-a7d5-ddc2e7ffd6a0",
-    "title": "Prod editado",
-    "description": "Prod 1 de prueba",
-    "code": "01",
-    "price": 100,
-    "status": true,
-    "stock": 10,
-    "category": "agendas",
-    "thumbnails": [
-      "fotoEjemplo-1.jpg",
-      "fotoEjemplo-2.jpg",
-      "fotoEjemplo-3.jpg"
-    ]
-  },
-  {
-    "id": "63b2b795-6deb-4742-aaf5-2d77d6871f9f",
-    "title": "Prod 5",
-    "description": "Prod 5 stickers",
-    "code": "05",
-    "price": 500,
-    "status": true,
-    "stock": 20,
-    "category": "stickers",
-    "thumbnails": [
-      "fotoEjemplo-1.jpg",
-      "fotoEjemplo-2.jpg",
-      "fotoEjemplo-3.jpg"
-    ]
-  },
-  {
-    "id": "fbfbd1bb-77ff-490a-91c1-0aa7788309b9",
-    "title": "Prod 7",
-    "description": "Prod 7 stickers",
-    "code": "07",
+    "title": "Stickers Friends",
+    "description": "24 stickers a prueba de agua",
+    "code": "001",
     "price": 1000,
     "status": true,
     "stock": 10,
@@ -45,10 +15,55 @@
     ]
   },
   {
+    "id": "63b2b795-6deb-4742-aaf5-2d77d6871f9f",
+    "title": "Imanes de Harry Potter",
+    "description": "Imanes de las casas de Hogwarts",
+    "code": "002",
+    "price": 2000,
+    "status": true,
+    "stock": 20,
+    "category": "imanes",
+    "thumbnails": [
+      "fotoEjemplo-1.jpg",
+      "fotoEjemplo-2.jpg",
+      "fotoEjemplo-3.jpg"
+    ]
+  },
+  {
+    "id": "fbfbd1bb-77ff-490a-91c1-0aa7788309b9",
+    "title": "Agenda Stitch",
+    "description": "Para 15 meses, personalizable",
+    "code": "003",
+    "price": 18500,
+    "status": true,
+    "stock": 10,
+    "category": "agendas",
+    "thumbnails": [
+      "fotoEjemplo-1.jpg",
+      "fotoEjemplo-2.jpg",
+      "fotoEjemplo-3.jpg"
+    ]
+  },
+  {
     "id": "ca2de8fe-e683-4207-b0e6-dbcb9b50b884",
     "title": "Agenda Friends",
+    "description": "Perpetua! para usar cualquier año!!",
+    "code": "004",
+    "price": 19999,
+    "status": true,
+    "stock": 10,
+    "category": "agendas",
+    "thumbnails": [
+      "fotoEjemplo-1.jpg",
+      "fotoEjemplo-2.jpg",
+      "fotoEjemplo-3.jpg"
+    ]
+  },
+  {
+    "id": "2608627b-b4ad-42f3-92b3-6a5e6cc9a211",
+    "title": "Agenda Friends",
     "description": "Perpetua, para cualquier año",
-    "code": "099",
+    "code": "092",
     "price": 10000,
     "status": true,
     "stock": 10,
