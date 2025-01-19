@@ -38,3 +38,7 @@ footer {
     text-align: center;
     margin: 8px;
 }
+
+span {
+    font-weight: bold;
+}

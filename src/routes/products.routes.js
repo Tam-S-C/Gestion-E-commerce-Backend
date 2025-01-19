@@ -33,9 +33,9 @@ productsRoutes.get("/:id", async (req, res) => {
 //POST
 
 productsRoutes.post("/", async (req, res) => {
+
     const { title, description, code, price, status, stock, category, thumbnails } = req.body;
     products.push(req.body);
-
     io.emit("productAdded", req.body);
 
     if (!title || !description || !code || !price || !stock || !category) {
@@ -67,7 +67,9 @@ productsRoutes.post("/", async (req, res) => {
         });
 
         res.status(201).json(product);
+        
     } catch (error) {
+        console.error("Error al crear el producto:", error);
         return res.status(500).json({ message: "Error al crear el producto." });
     }
 });

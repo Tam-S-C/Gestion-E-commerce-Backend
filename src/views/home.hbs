@@ -1,13 +1,24 @@
 <h1>Home</h1>
 
+<a href="/realTimeProducts">Ir al gestor de Productos</a>
+
+
 <ul class="collection">
     {{#each products}}
 
-    <li> 
+    <li class="collection-item"> 
         {{ this.title }} 
+        - 
+        ${{ this.price }}
         -
-        {{ this.price }}
+        {{ this.description }}
+        -
+        {{ this.code }}
+        - Stock:
+        {{ this.stock }}
+        - Categoría:
+        {{ this.category }}
+        
     </li>
-
     {{/each}}
 </ul>

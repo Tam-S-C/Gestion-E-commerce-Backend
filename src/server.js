@@ -3,7 +3,7 @@ import express from "express";
 import morgan from "morgan"; // middleware para ver en consola las peticiones
 import path from "path";
 
-import { productsRoutes } from "./routes/products.routes.js";
+import { productsRoutes, products } from "./routes/products.routes.js";
 import { cartsRoutes } from "./routes/carts.routes.js";
 import { viewsRoutes } from "./routes/views.routes.js";
 import { __dirname } from "./dirname.js";
@@ -49,4 +49,6 @@ export const io = new Server(server);
 
 io.on("connection", (socket) => {
     console.log("Nuevo cliente conectado:", socket.id);    
+
+    socket.emit("init", products);
 });

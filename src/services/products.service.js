@@ -92,7 +92,6 @@ class ProductsService {
       await this.saveProductOnFile();
       return product;
     } catch (error) {
-        console.error("Error al crear el producto:", error);
         throw new Error("No se pudo crear el producto.");
     }
   }

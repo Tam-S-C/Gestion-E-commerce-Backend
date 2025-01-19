@@ -43,5 +43,20 @@
       "fotoEjemplo-2.jpg",
       "fotoEjemplo-3.jpg"
     ]
+  },
+  {
+    "id": "ca2de8fe-e683-4207-b0e6-dbcb9b50b884",
+    "title": "Agenda Friends",
+    "description": "Perpetua, para cualquier año",
+    "code": "099",
+    "price": 10000,
+    "status": true,
+    "stock": 10,
+    "category": "agendas",
+    "thumbnails": [
+      "fotoEjemplo-1.jpg",
+      "fotoEjemplo-2.jpg",
+      "fotoEjemplo-3.jpg"
+    ]
   }
 ]

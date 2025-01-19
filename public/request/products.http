@@ -1,0 +1,19 @@
+### GET Products
+
+GET http://localhost:8080/api/products
+
+
+### POST Product
+
+POST http://localhost:8080/api/products
+Content-Type: application/json
+
+  {
+    "title": "Agenda Friends",
+    "description": "Perpetua, para cualquier año",
+    "code": "099",
+    "price": 10000,
+    "stock": 10,
+    "category": "agendas",
+    "status": true
+  }
