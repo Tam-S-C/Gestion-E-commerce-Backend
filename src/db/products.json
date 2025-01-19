@@ -30,11 +30,11 @@
     ]
   },
   {
-    "id": "fbfbd1bb-77ff-490a-91c1-0aa7788309b9",
-    "title": "Agenda Stitch",
-    "description": "Para 15 meses, personalizable",
+    "id": "90e9b29e-07da-476c-94ec-0364b5bfc418",
+    "title": "Agenda HP",
+    "description": "Perpetua! para usar cualquier año",
     "code": "003",
-    "price": 18500,
+    "price": 18000,
     "status": true,
     "stock": 10,
     "category": "agendas",
@@ -45,26 +45,11 @@
     ]
   },
   {
-    "id": "ca2de8fe-e683-4207-b0e6-dbcb9b50b884",
-    "title": "Agenda Friends",
-    "description": "Perpetua! para usar cualquier año!!",
+    "id": "724d2ebe-5027-4807-84f0-9d248406008a",
+    "title": "Agenda Stitch",
+    "description": "Perpetua! para usar cualquier año",
     "code": "004",
-    "price": 19999,
-    "status": true,
-    "stock": 10,
-    "category": "agendas",
-    "thumbnails": [
-      "fotoEjemplo-1.jpg",
-      "fotoEjemplo-2.jpg",
-      "fotoEjemplo-3.jpg"
-    ]
-  },
-  {
-    "id": "2608627b-b4ad-42f3-92b3-6a5e6cc9a211",
-    "title": "Agenda Friends",
-    "description": "Perpetua, para cualquier año",
-    "code": "092",
-    "price": 10000,
+    "price": 18000,
     "status": true,
     "stock": 10,
     "category": "agendas",

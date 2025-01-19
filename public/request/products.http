@@ -9,14 +9,16 @@ POST http://localhost:8080/api/products
 Content-Type: application/json
 
   {
-    "title": "Agenda Friends",
-    "description": "Perpetua, para cualquier año",
-    "code": "091",
-    "price": 10000,
+    "title": "Agenda Alicia",
+    "description": "Perpetua! para usar cualquier año",
+    "code": "005",
+    "price": 18000,
     "stock": 10,
     "category": "agendas",
     "status": true
   }
+
+
 
 
 //  Recordar que son obligatorios los campos: 

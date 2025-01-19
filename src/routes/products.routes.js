@@ -35,8 +35,7 @@ productsRoutes.get("/:id", async (req, res) => {
 productsRoutes.post("/", async (req, res) => {
 
     const { title, description, code, price, status, stock, category, thumbnails } = req.body;
-    products.push(req.body);
-    io.emit("productAdded", req.body);
+    
 
     if (!title || !description || !code || !price || !stock || !category) {
         return res.status(400).json({ error: "Todos los campos son requeridos" });
@@ -66,6 +65,8 @@ productsRoutes.post("/", async (req, res) => {
             thumbnails: thumbnails ?? [] 
         });
 
+        products.push(product);
+        io.emit("productAdded", product);
         res.status(201).json(product);
         
     } catch (error) {
@@ -105,7 +106,11 @@ productsRoutes.delete("/:id", async (req, res) => {
     if (!product) {
         return res.status(404).json({ message: "No se encontró el producto." });
     }
+
+    io.emit("productDeleted", id);
+    
     res.status(200).json({product});
+
     } catch (error) {
         return res.status(500).json({ message: "Error al eliminar el producto." });
     }

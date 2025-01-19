@@ -160,10 +160,11 @@ class ProductsService {
       return null;
     }
     const index = this.products.findIndex((product) => product.id === id);
-    this.products.splice(index, 1);
+    const [deletedProduct] = this.products.splice(index, 1);
+
     try {
       await this.saveProductOnFile();
-      return product;
+      return deletedProduct;
     } catch (error) {
         console.error("Error al eliminar el producto:", error);
         throw new Error("No se pudo eliminar el producto.");
@@ -183,6 +184,7 @@ class ProductsService {
         this.path,
         JSON.stringify(this.products, null, 2)
       );
+      console.log("Productos guardados en el archivo correctamente.");
     } catch (error) {
       console.error("Error al guardar el archivo de productos:", error); 
       throw new Error("Error al guardar el archivo.");

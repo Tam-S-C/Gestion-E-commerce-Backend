@@ -42,3 +42,16 @@ footer {
 span {
     font-weight: bold;
 }
+
+.delete {
+    color: rgb(234, 78, 151);
+    cursor: pointer;
+    border-radius: 15px;
+    background-color: rgb(255, 255, 255);
+    font-weight: bold;
+    
+}
+
+.delete:hover {
+    background-color: rgba(228, 228, 228);
+}
