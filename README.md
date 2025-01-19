@@ -1,7 +1,7 @@
 <h1><img src="https://img.shields.io/badge/GESTION ECOMMERCE-BACKEND-32286E?logo=null&logoColor=black&style=flat" width="320" height="32"/></h1>
 
 
-## [VIDEO DEMOSTRATIVO](https://drive.google.com/file/d/1_tWYToi5lvVw_qbifvqmMNDFHyXjmoup/view?usp=sharing)
+## [VIDEO DEMOSTRATIVO Pre-Entrega 2](https://drive.google.com/file/d/1mUXX-b_0Rim2-QIUeJ7QaIEyWkZuBZHp/view?usp=sharing)
 
 
 > Curso: Programación Backend I: Desarrollo Avanzado de Backend
@@ -20,8 +20,8 @@ Configuración del proyecto para que trabaje con Handlebars y Websocket.
 
 - [x] Uso de motor de plantillas Handlebars, librería para renderizar las vistas: home.hbs y realTimeProducts.hbs.
 - [x] Websocket para actualizar la lista de productos en tiempo real con la instalación de socket.io, tanto al agregar como al eliminar un producto.
-- [x] Se utilizó Materialize, librería para crear un diseño de página, más estilos propios.
-- [x] Se utilizó Morgan, middleware para ver en consola las peticiones
+- [x] Se utilizó Materialize, librería para darle estilos de página, más estilos propios.
+- [x] Se utilizó Morgan, middleware para ver en consola las peticiones.
 
 
 <br>
@@ -33,6 +33,7 @@ _____________________________________________________________________________
 Realización de un servidor que contiene los endpoints y servicios necesarios 
 para gestionar los productos y carritos de compra en un e-commerce.
 
+## [VIDEO DEMOSTRATIVO](https://drive.google.com/file/d/1_tWYToi5lvVw_qbifvqmMNDFHyXjmoup/view?usp=sharing)
 
 - [x] Gestión de productos y carritos de compra con getAllProducts, 
 getProductById, createProduct, updateProduct, deleteProduct. 
