@@ -1,7 +1,7 @@
 <h1><img src="https://img.shields.io/badge/GESTION ECOMMERCE-BACKEND-32286E?logo=null&logoColor=black&style=flat" width="320" height="32"/></h1>
 
 
-## [VIDEO DEMOSTRATIVO Pre-Entrega 2](https://drive.google.com/file/d/1mUXX-b_0Rim2-QIUeJ7QaIEyWkZuBZHp/view?usp=sharing)
+## [VIDEO DEMOSTRATIVO Pre-Entrega 3](...)
 
 
 > Curso: Programación Backend I: Desarrollo Avanzado de Backend
@@ -15,7 +15,29 @@
 * Tutor Regular CoderAsk: Victoria Rodriguez Mora
 
 
+<h3> > ENTREGA FINAL</h3>
+
+* Objetivos generales
+
+- [x] Mongo Atlas como sistema de persistencia principal
+- [x] Nuevos endpoints para poder trabajar con productos y carritos.
+
+* Objetivos específicos
+
+- [x] Consultas de productos con filtros, paginación y ordenamientos.
+- [x] Gestión de carrito con vista .hbs para implementar los últimos conceptos vistos como "populate".
+
+
+<br>
+
+_____________________________________________________________________________
+<br>
+
+
 <h3> > Segunda Pre-Entrega</h3>
+
+## [VIDEO DEMOSTRATIVO Pre-Entrega 2](https://drive.google.com/file/d/1mUXX-b_0Rim2-QIUeJ7QaIEyWkZuBZHp/view?usp=sharing)
+
 Configuración del proyecto para que trabaje con Handlebars y Websocket.
 
 - [x] Uso de motor de plantillas Handlebars, librería para renderizar las vistas: home.hbs y realTimeProducts.hbs.
