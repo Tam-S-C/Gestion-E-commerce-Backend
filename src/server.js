@@ -1,6 +1,6 @@
 import handlebars from "express-handlebars";
 import express from "express";
-import morgan from "morgan"; // middleware para ver en consola las peticiones
+import morgan from "morgan"; 
 import path from "path";
 
 import { productsRoutes, products } from "./routes/products.routes.js";

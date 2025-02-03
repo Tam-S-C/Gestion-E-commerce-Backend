@@ -1,8 +1,7 @@
 [
   {
-    "id": "05ccebc2-2c77-439d-a7d5-ddc2e7ffd6a0",
     "title": "Stickers Friends",
-    "description": "24 stickers a prueba de agua",
+    "description": "Vinílicos! aprueba de agua!",
     "code": "001",
     "price": 1000,
     "status": true,
@@ -15,7 +14,6 @@
     ]
   },
   {
-    "id": "63b2b795-6deb-4742-aaf5-2d77d6871f9f",
     "title": "Imanes de Harry Potter",
     "description": "Imanes de las casas de Hogwarts",
     "code": "002",
@@ -30,7 +28,6 @@
     ]
   },
   {
-    "id": "90e9b29e-07da-476c-94ec-0364b5bfc418",
     "title": "Agenda HP",
     "description": "Perpetua! para usar cualquier año",
     "code": "003",
@@ -45,14 +42,293 @@
     ]
   },
   {
-    "id": "afa5f25d-85f9-4e6e-a549-cfdb9b60fb4f",
-    "title": "Agenda Alicia",
+    "title": "Agenda BTTF",
     "description": "Perpetua! para usar cualquier año",
     "code": "004",
+    "price": 21000,
+    "status": true,
+    "stock": 8,
+    "category": "agendas",
+    "thumbnails": [
+      "fotoEjemplo-1.jpg",
+      "fotoEjemplo-2.jpg",
+      "fotoEjemplo-3.jpg"
+    ]
+  },
+  {
+    "title": "Señaladores Alicia",
+    "description": "Set de 6 señaladores de Alicia en el país de las maravillas",
+    "code": "005",
+    "price": 1500,
+    "status": true,
+    "stock": 18,
+    "category": "senaladores",
+    "thumbnails": [
+      "fotoEjemplo-1.jpg",
+      "fotoEjemplo-2.jpg",
+      "fotoEjemplo-3.jpg"
+    ]
+  },
+  {
+    "title": "Agenda HP",
+    "description": "Perpetua! para usar cualquier año",
+    "code": "006",
     "price": 18000,
     "status": true,
     "stock": 10,
     "category": "agendas",
+    "thumbnails": [
+      "fotoEjemplo-1.jpg",
+      "fotoEjemplo-2.jpg",
+      "fotoEjemplo-3.jpg"
+    ]
+  },
+  {
+    "title": "Imanes BTTF",
+    "description": "Set de 6 imanes de volver al futuro",
+    "code": "007",
+    "price": 1500,
+    "status": true,
+    "stock": 8,
+    "category": "imanes",
+    "thumbnails": [
+      "fotoEjemplo-1.jpg",
+      "fotoEjemplo-2.jpg",
+      "fotoEjemplo-3.jpg"
+    ]
+  },
+  {
+    "title": "Stickers Alicia",
+    "description": "Vinílicos! aprueba de agua!",
+    "code": "008",
+    "price": 18000,
+    "status": true,
+    "stock": 12,
+    "category": "Stickers",
+    "thumbnails": [
+      "fotoEjemplo-1.jpg",
+      "fotoEjemplo-2.jpg",
+      "fotoEjemplo-3.jpg"
+    ]
+  },
+  {
+    "title": "Stickers HP",
+    "description": "Vinílicos! aprueba de agua!",
+    "code": "009",
+    "price": 18000,
+    "status": true,
+    "stock": 10,
+    "category": "stickers",
+    "thumbnails": [
+      "fotoEjemplo-1.jpg",
+      "fotoEjemplo-2.jpg",
+      "fotoEjemplo-3.jpg"
+    ]
+  },
+  {
+    "title": "Agenda BTTF",
+    "description": "Perpetua! para usar cualquier año",
+    "code": "010",
+    "price": 21000,
+    "status": true,
+    "stock": 8,
+    "category": "agendas",
+    "thumbnails": [
+      "fotoEjemplo-1.jpg",
+      "fotoEjemplo-2.jpg",
+      "fotoEjemplo-3.jpg"
+    ]
+  },
+  {
+    "title": "Stickers Alicia",
+    "description": "Vinílicos! aprueba de agua!",
+    "code": "011",
+    "price": 1500,
+    "status": true,
+    "stock": 15,
+    "category": "stickers",
+    "thumbnails": [
+      "fotoEjemplo-1.jpg",
+      "fotoEjemplo-2.jpg",
+      "fotoEjemplo-3.jpg"
+    ]
+  },
+  {
+    "title": "Stickers HP",
+    "description": "Vinílico! aprueba de agua!",
+    "code": "012",
+    "price": 500,
+    "status": true,
+    "stock": 20,
+    "category": "stickers",
+    "thumbnails": [
+      "fotoEjemplo-1.jpg",
+      "fotoEjemplo-2.jpg",
+      "fotoEjemplo-3.jpg"
+    ]
+  },
+  {
+    "title": "Stickers BTTF",
+    "description": "Vinílicos! aprueba de agua!",
+    "code": "013",
+    "price": 1500,
+    "status": true,
+    "stock": 8,
+    "category": "stickers",
+    "thumbnails": [
+      "fotoEjemplo-1.jpg",
+      "fotoEjemplo-2.jpg",
+      "fotoEjemplo-3.jpg"
+    ]
+  },
+  {
+    "title": "Stickers Alicia",
+    "description": "Vinílicos! aprueba de agua!",
+    "code": "014",
+    "price": 1500,
+    "status": true,
+    "stock": 15,
+    "category": "stickers",
+    "thumbnails": [
+      "fotoEjemplo-1.jpg",
+      "fotoEjemplo-2.jpg",
+      "fotoEjemplo-3.jpg"
+    ]
+  },
+  {
+    "title": "Agenda HP",
+    "description": "Perpetua! para usar cualquier año",
+    "code": "015",
+    "price": 25000,
+    "status": true,
+    "stock": 5,
+    "category": "agendas",
+    "thumbnails": [
+      "fotoEjemplo-1.jpg",
+      "fotoEjemplo-2.jpg",
+      "fotoEjemplo-3.jpg"
+    ]
+  },  
+  {
+    "title": "Agenda BTTF",
+    "description": "Perpetua! para usar cualquier año",
+    "code": "016",
+    "price": 25000,
+    "status": true,
+    "stock": 15,
+    "category": "agendas",
+    "thumbnails": [
+      "fotoEjemplo-1.jpg",
+      "fotoEjemplo-2.jpg",
+      "fotoEjemplo-3.jpg"
+    ]
+  },
+  {
+    "title": "Imanes Alicia",
+    "description": "Set de 6 imanes de Alicia en el país de las maravillas",
+    "code": "017",
+    "price": 1500,
+    "status": true,
+    "stock": 5,
+    "category": "imanes",
+    "thumbnails": [
+      "fotoEjemplo-1.jpg",
+      "fotoEjemplo-2.jpg",
+      "fotoEjemplo-3.jpg"
+    ]
+  },
+  {
+    "title": "Imanes HP",
+    "description": "Set de 6 imanes de Harry Potter",
+    "code": "018",
+    "price": 1500,
+    "status": true,
+    "stock": 20,
+    "category": "imanes",
+    "thumbnails": [
+      "fotoEjemplo-1.jpg",
+      "fotoEjemplo-2.jpg",
+      "fotoEjemplo-3.jpg"
+    ]
+  },
+  {
+    "title": "Imanes BTTF",
+    "description": "Set de 6 imanes de Batman",
+    "code": "019",
+    "price": 1500,
+    "status": true,
+    "stock": 5,
+    "category": "imanes",
+    "thumbnails": [
+      "fotoEjemplo-1.jpg",
+      "fotoEjemplo-2.jpg",
+      "fotoEjemplo-3.jpg"
+    ]
+  },
+  {
+    "title": "Imanes Alicia",
+    "description": "Set de 6 imanes de Alicia en el país de las maravillas",
+    "code": "020",
+    "price": 1500,
+    "status": true,
+    "stock": 15,
+    "category": "imanes",
+    "thumbnails": [
+      "fotoEjemplo-1.jpg",
+      "fotoEjemplo-2.jpg",
+      "fotoEjemplo-3.jpg"
+    ]
+  },
+  {
+    "title": "Señaladores HP",
+    "description": "Set de 6 señaladores de Harry Potter",
+    "code": "021",
+    "price": 1900,
+    "status": true,
+    "stock": 12,
+    "category": "senaladores",
+    "thumbnails": [
+      "fotoEjemplo-1.jpg",
+      "fotoEjemplo-2.jpg",
+      "fotoEjemplo-3.jpg"
+    ]
+  },
+  {
+    "title": "Señaladores BTTF",
+    "description": "Set de 6 señaladores de Batman",
+    "code": "022",
+    "price": 1900,
+    "status": true,
+    "stock": 8,
+    "category": "senaladores",
+    "thumbnails": [
+      "fotoEjemplo-1.jpg",
+      "fotoEjemplo-2.jpg",
+      "fotoEjemplo-3.jpg"
+    ]
+  },
+  {
+    "title": "Señaladores Alicia",
+    "description": "Set de 6 señaladores de Alicia en el país de las maravillas",
+    "code": "023",
+    "price": 1900,
+    "status": true,
+    "stock": 15,
+    "category": "senaladores",
+    "thumbnails": [
+      "fotoEjemplo-1.jpg",
+      "fotoEjemplo-2.jpg",
+      "fotoEjemplo-3.jpg"
+    ]
+  },
+  {
+    "title": "Señaladores HP",
+    "description": "Set de 6 señaladores de Harry Potter",
+    "code": "024",
+    "price": 1900,
+    "status": true,
+    "stock": 12,
+    "category": "senaladores",
     "thumbnails": [
       "fotoEjemplo-1.jpg",
       "fotoEjemplo-2.jpg",

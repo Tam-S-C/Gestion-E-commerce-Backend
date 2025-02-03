@@ -20,7 +20,6 @@ Content-Type: application/json
 
 
 
-
 //  Recordar que son obligatorios los campos: 
 //  title, description, code, price, stock, category, status 
 //  y que el CODE no se debe repetir!!
