@@ -1,7 +1,7 @@
 <h1><img src="https://img.shields.io/badge/GESTION ECOMMERCE-BACKEND-32286E?logo=null&logoColor=black&style=flat" width="320" height="32"/></h1>
 
 
-## [VIDEO DEMOSTRATIVO Pre-Entrega 3](...)
+## [VIDEO DEMOSTRATIVO Pre-Entrega 3](sin ruta aun)
 
 
 > Curso: Programación Backend I: Desarrollo Avanzado de Backend
@@ -55,7 +55,7 @@ _____________________________________________________________________________
 Realización de un servidor que contiene los endpoints y servicios necesarios 
 para gestionar los productos y carritos de compra en un e-commerce.
 
-## [VIDEO DEMOSTRATIVO](https://drive.google.com/file/d/1_tWYToi5lvVw_qbifvqmMNDFHyXjmoup/view?usp=sharing)
+## [VIDEO DEMOSTRATIVO Pre-Entrega 1](https://drive.google.com/file/d/1_tWYToi5lvVw_qbifvqmMNDFHyXjmoup/view?usp=sharing)
 
 - [x] Gestión de productos y carritos de compra con getAllProducts, 
 getProductById, createProduct, updateProduct, deleteProduct. 
