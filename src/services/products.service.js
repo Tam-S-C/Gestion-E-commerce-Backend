@@ -1,3 +1,7 @@
+//---------------------------------------
+// Entrega 1 y 2 con FileSystem
+//---------------------------------------
+
 import fs from "node:fs";
 import { v4 as uuid } from "uuid";
 
@@ -6,7 +10,7 @@ class ProductsService {
   products = [];
 
   /**
-   * @param { path } path - Path del archivo donde se guardan los productos.
+   * @param { path } path 
    */
 
   constructor({ path }) {
@@ -27,7 +31,7 @@ class ProductsService {
   // ---------------------------------------
   // getAllProducts
   /**
-   * @returns { Promise<Array> } - Devuelve todos los productos.
+   * @returns { Promise<Array> } 
    */
   // ---------------------------------------
   async getAllProducts() {
@@ -38,8 +42,8 @@ class ProductsService {
   // ---------------------------------------
   // getProductById
   /**
-   * @param {id} id - Id del producto a buscar.
-   * @returns {Object} Devuelve el producto con el id pasado por parámetro.
+   * @param {id} id 
+   * @returns {Object} 
    */
   // ---------------------------------------
   async getProductById({ id }) {
@@ -50,9 +54,9 @@ class ProductsService {
   // ---------------------------------------
   // createProduct
   /**
-   * @param {Object} product - Datos del producto a crear.
-   * @returns {Promise<Object>} Promesa que resuelve con el producto creado.
-   * @throws {Error} Si ya existe un producto con el mismo ID.
+   * @param {Object} product
+   * @returns {Promise<Object>} 
+   * @throws {Error} 
    */
   // ---------------------------------------
   async createProduct({
@@ -99,8 +103,8 @@ class ProductsService {
   // ---------------------------------------
   // updateProduct
   /**
-   * @param {Object} product - Datos actualizados del producto.
-   * @returns {Promise<Object|null>} Promesa que resuelve con el producto actualizado o null si no se encuentra.
+   * @param {Object} product 
+   * @returns {Promise<Object|null>} 
    */
   // ---------------------------------------
 
@@ -147,8 +151,8 @@ class ProductsService {
   // ----------------------------------------
   // deleteProduct
   /**
-   * @param {id} id - Id del producto a eliminar.
-   * @returns {Promise<Object|null>} Promesa que resuelve con el producto eliminado o `null` si no se encuentra.
+   * @param {id} id - 
+   * @returns {Promise<Object|null>} 
    */
   // ----------------------------------------
 
@@ -174,7 +178,7 @@ class ProductsService {
   // ----------------------------------------
   // saveProductOnFile
   /**
-   * @returns {Promise<void>} Promesa que se resuelve cuando los productos se han guardado correctamente.
+   * @returns {Promise<void>} 
    */
   // ----------------------------------------
 

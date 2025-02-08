@@ -1,25 +1,77 @@
 ### GET Products
 
-GET http://localhost:8080/api/products
+GET http://localhost:5000/api/products
 
 
 ### POST Product
 
-POST http://localhost:8080/api/products
+POST http://localhost:5000/api/products
 Content-Type: application/json
 
   {
-    "title": "Agenda Alicia",
+    "title": "Agenda Spiderman",
     "description": "Perpetua! para usar cualquier año",
-    "code": "005",
-    "price": 18000,
-    "stock": 10,
+    "code": "026",
+    "price": 22500,
+    "stock": 5,
     "category": "agendas",
     "status": true
   }
 
+# Campos OBLIGATORIOS: title, description, code, price, stock, category, status.
+# El CODE no se debe repetir.
 
 
-//  Recordar que son obligatorios los campos: 
-//  title, description, code, price, stock, category, status 
-//  y que el CODE no se debe repetir!!
+### PUT Update Product
+PUT http://localhost:5000/api/products/67a1a2d9fbf4a4c9c5690cf6
+Content-Type: application/json
+
+{
+    "title": "Agenda Friends (Modelo 2)",
+    "price": 19500
+}
+
+
+### DELETE Delete Product
+DELETE http://localhost:5000/api/products/67a6d480643aca9c22cdfad0
+Content-Type: application/json
+
+
+// ---------------------------------------
+// REQUESTS CART
+// ---------------------------------------
+
+### POST New
+POST http://localhost:5000/api/carts
+Content-Type: application/json
+
+### GET All Carts
+GET http://localhost:5000/api/carts
+
+### GET Cart by Id
+GET http://localhost:5000/api/carts/67a58bfd1407335fafead34d
+Content-Type: application/json
+
+
+### POST Agregar Product al Cart
+POST http://localhost:5000/api/carts/67a1a2d9fbf4a4c9c5690d0c/product/67a1a2d9fbf4a4c9c5690d0c
+Content-Type: application/json
+
+
+### PUT Update Quantity
+PUT http://localhost:5000/api/carts/67a58bfd1407335fafead34d/product/67a1a2d9fbf4a4c9c5690d0c
+Content-Type: application/json
+{
+    "quantity": 3
+}
+
+### DELETE Remove Product from Cart
+DELETE http://localhost:5000/api/carts/67a58bfd1407335fafead34d/product/05ccebc2-2c77-439d-a7d5-ddc2e7ffd6a0
+Content-Type: application/json
+
+
+### DELETE Cart
+DELETE http://localhost:5000/api/carts/67a58bfd1407335fafead34d
+Content-Type: application/json
+
+

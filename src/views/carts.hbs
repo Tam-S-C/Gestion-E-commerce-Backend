@@ -1,0 +1,102 @@
+<h1>Carrito de Compras</h1>
+<h4>Detalle de tus productos elegidos</h4>
+
+{{#if cart}}
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Producto</th>
+        <th>Precio</th>
+        <th>Cantidad</th>
+        <th>Total</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each cart.products}}
+        <tr>
+          <td>{{this.product.title}}</td>
+          <td>${{this.product.price}}</td>
+          <td>{{this.quantity}}</td>
+          <td>${{multiply this.product.price this.quantity}}</td>
+          <td>
+            <button class="btn btn-danger remove-from-cart" data-id="{{this.product._id}}">Eliminar</button>
+          </td>
+        </tr>
+      {{/each}}
+    </tbody>
+  </table>
+
+  <div class="total">
+    <h5>Total: ${{calculateTotal cart.products}}</h5>
+  </div>
+
+  <button class="btn btn-danger" id="clear-cart">Eliminar todo el carrito</button>
+
+{{else}}
+  <p>No hay productos en el carrito</p>
+{{/if}}
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // Eliminar un producto
+    const buttons = document.querySelectorAll(".remove-from-cart");
+    
+    buttons.forEach(button => {
+      button.addEventListener("click", async (event) => {
+        try {
+          const productId = event.target.dataset.id;
+          const cartId = '{{cart._id}}';
+
+          if (!cartId) {
+            alert("No hay carrito disponible");
+            return;
+          }
+
+          const response = await fetch(`/api/carts/${cartId}/products/${productId}`, {
+            method: "DELETE",
+            headers: { 
+              "Content-Type": "application/json" 
+            }
+          });
+
+          if (!response.ok) {
+            throw new Error("Error al eliminar el producto");
+          }
+
+          alert("Producto eliminado del carrito");
+          location.reload();
+        } catch (error) {
+          console.error("Error:", error);
+          alert("Error al eliminar el producto");
+        }
+      });
+    });
+
+    // Eliminar todo el carrito
+    const clearCartButton = document.getElementById("clear-cart");
+    if (clearCartButton) {
+      clearCartButton.addEventListener("click", async () => {
+        try {
+          const cartId = '{{cart._id}}';
+          const response = await fetch(`/api/carts/${cartId}`, {
+            method: "DELETE",
+            headers: { 
+              "Content-Type": "application/json" 
+            }
+          });
+
+          if (!response.ok) {
+            throw new Error("Error al eliminar todo el carrito");
+          }
+
+          alert("Carrito vacío");
+          location.reload();
+        } catch (error) {
+          console.error("Error:", error);
+          alert("Error al vaciar el carrito");
+        }
+      });
+    }
+  });
+</script>

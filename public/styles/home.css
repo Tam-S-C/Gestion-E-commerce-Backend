@@ -1,37 +1,59 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    list-style-type: none;
+}   
+
 body {
-    background-color: rgb(35, 35, 35);
+    background-color: rgb(35, 35, 35) !important;
     font-family: Helvetica, sans-serif;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 100vh;
     margin: 20px;
 }
 
-h1 {
-    color: white;
-    font-size: 48px;
-    text-align: center;
-    margin-bottom: 1rem;
+a {
+    color: rgb(216, 230, 255) !important;
+    text-decoration: none !important;
+    font-weight: bold   !important;
+    font-size: 12px !important;
+    border: 1px solid rgb(216, 230, 255);
+    border-radius: 16px;
+    padding: 8px !important;
+    margin: 4px !important;   
+}   
+
+.collection {
+    background-color: white;
+    margin: 16px !important;
+    border-radius: 16px !important;
 }
 
-h4 {
-    color: rgb(216, 230, 255);
+h1 {
+    color: white !important;
+    font-size: 48px;
+    text-align: center;
+    margin: 16px !important;
+}
+
+h4, h3 {
+    color: rgb(216, 230, 255) !important;
     font-size: 32px;
     font-weight: lighter;
     text-align: center;
-    margin-top: 8px;
-    margin-bottom: 8px;
+    margin: 24px !important;
 }
 
 p {
-    color: rgb(202, 211, 226);
+    color: rgb(202, 211, 226) !important;
     font-size: 16px;
     font-weight: lighter;
     text-align: center;
     margin-top: 8px;
-    margin-bottom: 8px;
+    margin-bottom: 2px !important;
 }
 
 footer {
@@ -46,12 +68,107 @@ span {
 .delete {
     color: rgb(234, 78, 151);
     cursor: pointer;
-    border-radius: 15px;
+    border-radius: 16px;
     background-color: rgb(255, 255, 255);
     font-weight: bold;
-    
 }
 
 .delete:hover {
     background-color: rgba(228, 228, 228);
+}
+
+.page-link {
+    color: rgb(216, 230, 255) !important;
+    background-color: rgb(35, 35, 35) !important;
+    border: 1px solid rgb(216, 230, 255) !important;
+    border-radius: 16px !important;
+    margin-right: 32px !important;
+    margin-left: -16px !important;
+}
+
+.page-link:hover {
+    background-color: rgb(216, 230, 255) !important;
+    color: rgb(35, 35, 35) !important;
+}
+
+.btn{
+    background-color: rgb(216, 230, 255) !important;
+    color: rgb(35, 35, 35) !important;
+    border: 1px solid rgb(216, 230, 255) !important;
+    border-radius: 16px !important;
+    margin-top: 16px !important;
+    margin-left: -16px !important;
+
+}
+
+.btn:hover {
+    background-color: rgb(123, 151, 199) !important;
+    color: rgb(35, 35, 35) !important;
+    border: 1px solid rgb(123, 151, 199) !important;
+}
+
+th {
+    background-color: rgb(216, 230, 255) !important;
+}
+
+.navbarBTN {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-content: center !important;
+    width: 560px !important;
+    background-color: rgb(35, 35, 35) !important;
+    border-radius: 16px !important;
+}
+
+.form-select {
+ width: 200px !important;
+}
+
+.menuOrdenar, .menuBuscar {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    margin: 0 16px 16px 0 !important;
+}
+
+.order {
+    font-size: 16px !important;
+    font-weight: bold !important;
+    margin-right: 16px !important;
+}
+
+.btnAgregar {
+    padding-bottom: 16px !important;
+    padding-left: 16px !important;
+}
+
+input {
+    font-size: 14px !important;
+    border: 1px solid rgb(216, 230, 255) !important;
+    border-radius: 16px !important;
+    padding: 8px !important;
+    width: 300px !important;
+    height: 32px !important;
+    margin-left: 8px !important;
+}
+
+#searchBtn {
+    margin-left: 16px !important;
+    margin-bottom: 24px !important;
+}
+
+#products {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+}
+
+#clear-cart {
+    margin-left: 16px !important;
+}
+
+.total {
+    display: flex !important;
+    justify-content: center !important;
+    color: rgb(216, 230, 255) !important;
 }

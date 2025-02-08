@@ -1,118 +1,120 @@
 import { Router } from "express";
-import { productService } from "../services/products.service.js";
-import { io } from "../server.js";
+import { productModel } from "../models/product.model.js";
 
-export const productsRoutes = Router();
+export const productsRouter = Router();
 
-export const products = await productService.getAllProducts();
-
-// RUTAS-ROUTES => ENDPOINTS
-
-//GET ALL
-
-productsRoutes.get("/", async (req, res) => {
-    const products = await productService.getAllProducts();
-    res.status(200).json(products);
-});
-
-//GET BY ID
-
-productsRoutes.get("/:id", async (req, res) => {
-    const { id } = req.params;
-    
-    const product = await productService.getProductById({ id });
-
-    if (!product) { 
-       return res.status(404).json({ message: "No se encontró el producto, ID inválido." });
-    }
-
-    res.status(200).json(product);
-
-});
-
-//POST
-
-productsRoutes.post("/", async (req, res) => {
-
-    const { title, description, code, price, status, stock, category, thumbnails } = req.body;
-    
-
-    if (!title || !description || !code || !price || !stock || !category) {
-        return res.status(400).json({ error: "Todos los campos son requeridos" });
-    }
-
-    if (
-        typeof title !== "string" || 
-        typeof description !== "string" || 
-        typeof code !== "string" || 
-        typeof price !== "number" || 
-        typeof stock !== "number" || 
-        typeof category !== "string" ||
-        (thumbnails && !Array.isArray(thumbnails))
-    ) {
-        return res.status(400).json({ error: "Datos inválidos en el cuerpo de la solicitud" });
-    }
-
+//GET
+productsRouter.get("/", async (req, res) => {
     try {
-        const product = await productService.createProduct({ 
-            title, 
-            description, 
-            code, 
-            price, 
-            status: status ?? true, 
-            stock, 
-            category, 
-            thumbnails: thumbnails ?? [] 
-        });
-
-        products.push(product);
-        io.emit("productAdded", product);
-        res.status(201).json(product);
+        const { limit = 10, page = 1, sort, query } = req.query;
         
-    } catch (error) {
-        console.error("Error al crear el producto:", error);
-        return res.status(500).json({ message: "Error al crear el producto." });
-    }
-});
+        let filter = {};
+        if (query) {
+            filter = {
+                $or: [
+                    { category: { $regex: query, $options: "i" } }, 
+                    { title: { $regex: query, $options: "i" } }
+                ]
+            };
+        }
+        let options = {
+            page: Number(page),
+            limit: Number(limit),
+            lean: true 
+        };
 
-//PUT
-
-productsRoutes.put("/:id", async (req, res) => {
-    const { id } = req.params;
-    const { title, description, code, price, status, stock, category } = req.body;
-
-    try {
-        const product = await productService.updateProduct({ id, title, description, code, price, status, stock, category });
-
-        if (!product) {
-            return res.status(404).json({ message: "No se encontró el producto." });
+        if (sort === "asc") {
+            options.sort = { price: 1 };
+        } else if (sort === "desc") {
+            options.sort = { price: -1 };
+        }
+        
+        const products = await productModel.paginate(filter, options);
+        
+        if (!products.docs.length) {
+            return res.status(404).json({ status: "error", message: "No se encontraron productos." });
         }
 
-        res.status(200).json(product);
-
+        res.json({
+            status: "success",
+            payload: products.docs,
+            totalPages: products.totalPages,
+            prevPage: products.prevPage,
+            nextPage: products.nextPage,
+            page: products.page,
+            hasPrevPage: products.hasPrevPage,
+            hasNextPage: products.hasNextPage,
+            prevLink: products.hasPrevPage ? `/api/products?page=${products.prevPage}&limit=${limit}` : null,
+            nextLink: products.hasNextPage ? `/api/products?page=${products.nextPage}&limit=${limit}` : null
+        });
     } catch (error) {
-        return res.status(500).json({ message: "Error al actualizar el producto." });
+        res.status(500).json({ status: "error", message: "Error al obtener los productos", error: error.message });
     }
 });
+
+// POST: Crear un nuevo producto
+productsRouter.post("/", async (req, res) => {
+    try {
+        const newProduct = await productModel.create(req.body);
+        res.status(201).json({ status: "success", product: newProduct });
+    } catch (error) {
+        res.status(500).json({ message: "Error al crear el producto", error: error.message });
+    }
+});
+
+// POST agregar prod. al carrito
+productsRouter.post("/:pid/cart", async (req, res) => {
+    try {
+        const { pid } = req.params;
+        const { cartId } = req.body;
+        
+        let cart = await cartsModel.findById(cartId);
+        if (!cart) {
+            cart = await cartsModel.create({ products: [] });
+        }
+
+        const productIndex = cart.products.findIndex(p => p.productId.equals(pid));
+        if (productIndex !== -1) {
+            cart.products[productIndex].quantity += 1;
+        } else {
+            cart.products.push({ product: pid, quantity: 1 });
+        }
+        await cart.save();
+        res.status(200).json({ message: "Producto agregado al carrito", cart });
+    } catch (error) {
+        res.status(500).json({ message: "Error al agregar el producto al carrito", error: error.message });
+    }
+});
+
+// PUT: Editar un producto por ID
+productsRouter.put("/:pid", async (req, res) => {
+    try {
+        const { pid } = req.params;
+        const updatedProduct = await productModel.findByIdAndUpdate(pid, req.body, { new: true });
+
+        if (!updatedProduct) {
+            return res.status(404).json({ message: "Producto no encontrado" });
+        }
+
+        res.status(200).json({ status: "success", product: updatedProduct });
+    } catch (error) {
+        res.status(500).json({ message: "Error al actualizar el producto", error: error.message });
+    }
+});
+
 
 // DELETE
-
-productsRoutes.delete("/:id", async (req, res) => {
-    const { id } = req.params;
-
+productsRouter.delete("/:pid", async (req, res) => {
     try {
-    const product = await productService.deleteProduct({ id });
+        const { pid } = req.params;
+        const deletedProduct = await productModel.findByIdAndDelete(pid);
 
-    if (!product) {
-        return res.status(404).json({ message: "No se encontró el producto." });
-    }
+        if (!deletedProduct) {
+            return res.status(404).json({ message: "Producto no encontrado" });
+        }
 
-    io.emit("productDeleted", id);
-    
-    res.status(200).json({product});
-
+        res.status(200).json({ status: "success", message: "Producto eliminado correctamente" });
     } catch (error) {
-        return res.status(500).json({ message: "Error al eliminar el producto." });
+        res.status(500).json({ message: "Error al eliminar el producto", error: error.message });
     }
 });
-

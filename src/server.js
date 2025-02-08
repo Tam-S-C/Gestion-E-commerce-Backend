@@ -1,53 +1,77 @@
 import handlebars from "express-handlebars";
+import session from "express-session";
+import Handlebars from "handlebars";
+import mongoose from "mongoose";
 import express from "express";
-import morgan from "morgan"; 
+import morgan from "morgan";
 import path from "path";
 
-import { productsRoutes, products } from "./routes/products.routes.js";
-import { cartsRoutes } from "./routes/carts.routes.js";
-import { viewsRoutes } from "./routes/views.routes.js";
+import { allowInsecurePrototypeAccess } from "@handlebars/allow-prototype-access";
+import { productsRouter } from "./routes/products.routes.js";
+import { cartRouter } from "./routes/carts.routes.js";
+import { viewsRouter } from "./routes/views.routes.js";
 import { __dirname } from "./dirname.js";
-import { Server } from "socket.io";
-
 
 const app = express();
-const PORT = 8080;
+const PORT = 5000;
 
-app.use(morgan("dev")); 
+//MIDDLEWARES
+app.use(morgan("dev"));
 app.use(express.json());
-app.use(express.urlencoded({ extended: true}));
+app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.resolve(__dirname, "../public")));
+app.use(
+  session({
+    secret: "mysecretkey",
+    resave: false,
+    saveUninitialized: true,
+    cookie: { secure: false },
+  })
+);
 
 
-// HANDLEBARS
-
+// HBS
 app.engine(
-    "hbs", 
-    handlebars.engine({
-        extname: ".hbs",
-        defaultLayout: "main",
-    })
+  "hbs",
+  handlebars.engine({
+    extname: ".hbs",
+    defaultLayout: "main",
+    handlebars: allowInsecurePrototypeAccess(Handlebars),
+    helpers: {
+      multiply: (price, quantity) => {
+        return price * quantity;
+      },
+      calculateTotal: (products) => {
+        return products.reduce((total, product) => {
+          return total + (product.product.price * product.quantity);
+        }, 0);
+      },
+    },
+  })
 );
 
 app.set("view engine", "hbs");
 app.set("views", path.resolve(__dirname, "./views"));
 
-// ROUTES
 
-app.use("/", viewsRoutes);
-app.use("/api/products", productsRoutes);
-app.use("/api/carts", cartsRoutes);
+mongoose
+  .connect(
+    "mongodb+srv://tamaracanzobre:zdwIV2TZpBKZkZLl@backend-products.d44ge.mongodb.net/ecommerce",
+  )
+  .then(() => {
+    console.log("Conectado a la Base de Datos exitosamente");
+  })
+  .catch((error) => {
+    console.log("Error al conectar a la BD", error);
+  });
 
+//ROUTES
+app.use("/", viewsRouter);
+app.use("/products", viewsRouter);
+app.use("/api/products", productsRouter);
+app.use("/api/carts", cartRouter);
 
-// WEBSOCKET.IO => Listen PORT
 
 const server = app.listen(PORT, () => {
-    console.log(`Server running at http://localhost:${PORT}`);
-});
-
-export const io = new Server(server);
-
-io.on("connection", (socket) => {
-    console.log("Nuevo cliente conectado:", socket.id);    
-    socket.emit("init", products);
+  console.log(`Server running at http://localhost:${PORT}`);
 });

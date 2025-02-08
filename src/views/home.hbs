@@ -1,22 +1,22 @@
 <h1>Home</h1>
-
-<a href="/realTimeProducts">Ir al gestor de Productos</a>
-
+<h3>Bienvenidos a la mejor tienda de papelería Geek</h3>
+<h4>Vista de todos los productos</h4>
 
 <ul id="products" class="collection">
     {{#each products}}
 
-    <li class="collection-item"> 
+    <li class="collection-item">
+        <span>Producto: </span>  
         {{ this.title }} 
-        - 
-        ${{ this.price }}
-        -
+        <span>: </span> 
         {{ this.description }}
-        -
+        <span> - Precio: </span> 
+        ${{ this.price }}
+        <span> - Code: </span> 
         {{ this.code }}
-        - Stock:
+        <span> - Stock: </span> 
         {{ this.stock }}
-        - Categoría:
+        <span> - Categoría: </span> 
         {{ this.category }}
         
     </li>

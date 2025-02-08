@@ -1,0 +1,124 @@
+<h1>Gestor E-commerce</h1>
+<h4>Productos</h4>
+
+<div class="menuOrdenar">
+  <label for="sortSelect" class="order">Ordenar por precio:</label>
+  <select id="sortSelect" class="form-select">
+    <option value="">Sin orden</option>
+    <option value="asc">Menor a mayor</option>
+    <option value="desc">Mayor a menor</option>
+  </select>
+</div>
+
+<div class="menuBuscar">
+  <label for="searchInput">Buscar productos:</label>
+  <input type="text" id="searchInput" placeholder="Ej. Categorías: stickers, agendas, imanes">
+  <button id="searchBtn" class="btn btn-primary">Buscar</button>
+</div>
+
+<div>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col"> Cod. </th>
+        <th scope="col"> Titulo </th>
+        <th scope="col"> Precio </th>
+        <th scope="col"> Descripción </th>
+        <th scope="col"> Stock </th>
+        <th scope="col"> Categoría </th>
+        <th scope="col"> Agregar al Carrito </th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each products.docs}}
+        <tr>
+          <td> {{this.code}}</td>
+          <td> {{this.title}}</td>
+          <td> ${{this.price}}</td>
+          <td> {{this.description}} </td>
+          <td> {{this.stock}} </td>
+          <td> {{this.category}}</td>
+          <td class="btnAgregar">
+            <button class="btn btn-success add-to-cart" data-id="{{this._id}}">Agregar</button>
+          </td>
+        </tr>
+      {{/each}}
+    </tbody>
+  </table>
+  
+  <div class="position-relative m-4">
+    <ul class="pagination">
+      {{#if products.hasPrevPage}}
+        <li class="page-item">
+          <a class="page-link" href="/products?page={{products.prevPage}}&&limit=6">Previous</a>
+        </li>
+      {{/if}}
+      {{#if products.hasNextPage}}
+        <li class="page-item">
+          <a class="page-link" href="/products?page={{products.nextPage}}&&limit=6">Next</a>
+        </li>
+      {{/if}}
+    </ul>
+    <p class="btn btn-primary">Current Page: {{products.page}}</p>
+  </div>
+</div>
+
+<script>
+  // SORT asc. y desc.
+  document.getElementById("sortSelect").addEventListener("change", function() {
+    const selectedSort = this.value;
+    const currentUrl = new URL(window.location.href);
+    currentUrl.searchParams.set("sort", selectedSort);
+    window.location.href = currentUrl.toString();
+  });
+
+  // BUSCAR CAT.
+  document.getElementById("searchBtn").addEventListener("click", function() {
+    const searchQuery = document.getElementById("searchInput").value;
+    const sortSelect = document.getElementById("sortSelect").value;
+    const currentUrl = new URL(window.location.origin + "/products");
+
+    if (searchQuery) {
+      currentUrl.searchParams.set("query", searchQuery);
+    }
+    if (sortSelect) {
+      currentUrl.searchParams.set("sort", sortSelect);
+    }
+    window.location.href = currentUrl.toString();
+  });
+
+  // Agregar producto al carrito
+document.querySelectorAll(".add-to-cart").forEach(button => {
+    button.addEventListener("click", async (event) => {
+
+        try {
+            let cartId = sessionStorage.getItem('cartId');
+            
+            if (!cartId) {
+                const cartResponse = await fetch('/api/carts', {
+                    method: 'POST',
+                });
+                const cartData = await cartResponse.json();
+                cartId = cartData.cart._id;
+                sessionStorage.setItem('cartId', cartId);
+            }
+
+            const productId = event.target.dataset.id;
+            const response = await fetch(`/api/carts/${cartId}/product/${productId}`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            });
+
+            if (!response.ok) throw new Error('Error al agregar el producto');
+            
+            const data = await response.json();
+            alert('Producto agregado al carrito exitosamente');
+        } catch (error) {
+            console.error('Error:', error);
+            alert('Error al agregar el producto al carrito');
+        }
+    });
+});
+</script>
