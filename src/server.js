@@ -56,7 +56,7 @@ app.set("views", path.resolve(__dirname, "./views"));
 
 mongoose
   .connect(
-    "mongodb+srv://tamaracanzobre:zdwIV2TZpBKZkZLl@backend-products.d44ge.mongodb.net/ecommerce",
+    "mongodb+srv://PROFES PEGAR ACA LA CONEXION A LA BASE DE DATOS", //PEGAR ACÁ 
   )
   .then(() => {
     console.log("Conectado a la Base de Datos exitosamente");
@@ -65,6 +65,7 @@ mongoose
     console.log("Error al conectar a la BD", error);
   });
 
+  
 //ROUTES
 app.use("/", viewsRouter);
 app.use("/products", viewsRouter);

@@ -9,9 +9,9 @@ POST http://localhost:5000/api/products
 Content-Type: application/json
 
   {
-    "title": "Agenda Spiderman",
+    "title": "Agenda Volver al Futuro",
     "description": "Perpetua! para usar cualquier año",
-    "code": "026",
+    "code": "028",
     "price": 22500,
     "stock": 5,
     "category": "agendas",
@@ -23,17 +23,17 @@ Content-Type: application/json
 
 
 ### PUT Update Product
-PUT http://localhost:5000/api/products/67a1a2d9fbf4a4c9c5690cf6
+PUT http://localhost:5000/api/products/67a1a2d9fbf4a4c9c5690cf8
 Content-Type: application/json
 
 {
-    "title": "Agenda Friends (Modelo 2)",
+    "title": "Agenda BttF (Modelo 2)",
     "price": 19500
 }
 
 
 ### DELETE Delete Product
-DELETE http://localhost:5000/api/products/67a6d480643aca9c22cdfad0
+DELETE http://localhost:5000/api/products/67a1a2d9fbf4a4c9c5690cf9
 Content-Type: application/json
 
 
@@ -49,29 +49,29 @@ Content-Type: application/json
 GET http://localhost:5000/api/carts
 
 ### GET Cart by Id
-GET http://localhost:5000/api/carts/67a58bfd1407335fafead34d
+GET http://localhost:5000/api/carts/67a7bc35da53fcc26b196f18
 Content-Type: application/json
 
 
 ### POST Agregar Product al Cart
-POST http://localhost:5000/api/carts/67a1a2d9fbf4a4c9c5690d0c/product/67a1a2d9fbf4a4c9c5690d0c
+POST http://localhost:5000/api/carts/67a7bc35da53fcc26b196f18/product/67a1a2d9fbf4a4c9c5690cf6
 Content-Type: application/json
 
 
 ### PUT Update Quantity
-PUT http://localhost:5000/api/carts/67a58bfd1407335fafead34d/product/67a1a2d9fbf4a4c9c5690d0c
+PUT http://localhost:5000/api/carts/67a6f62d16680bcef8a07ad1/product/67a1a2d9fbf4a4c9c5690cf9
 Content-Type: application/json
 {
     "quantity": 3
 }
 
 ### DELETE Remove Product from Cart
-DELETE http://localhost:5000/api/carts/67a58bfd1407335fafead34d/product/05ccebc2-2c77-439d-a7d5-ddc2e7ffd6a0
+DELETE http://localhost:5000/api/carts/67a6f62d16680bcef8a07ad1/product/67a1a2d9fbf4a4c9c5690cf6
 Content-Type: application/json
 
 
 ### DELETE Cart
-DELETE http://localhost:5000/api/carts/67a58bfd1407335fafead34d
+DELETE http://localhost:5000/api/carts/67a6f62d16680bcef8a07ad1
 Content-Type: application/json
 
 

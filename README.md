@@ -1,13 +1,13 @@
 <h1><img src="https://img.shields.io/badge/GESTION ECOMMERCE-BACKEND-32286E?logo=null&logoColor=black&style=flat" width="320" height="32"/></h1>
 
 
-## [VIDEO DEMOSTRATIVO Entrega FINAL](*sin ruta aun*)
+## [VIDEO DEMOSTRATIVO Entrega FINAL](https://drive.google.com/file/d/1UgzdOO7vUKJJkgYh3kF8WI-6qFR0m7yb/view?usp=sharing)
 
 
 > Curso: Programación Backend I: Desarrollo Avanzado de Backend
 
 > Comisión: 76070
-
+ 
 * Alumna: Tamara S. Canzobre
 * Profesor: Emiliano Perez
 * Tutor: Alan Sinicco
@@ -30,12 +30,12 @@ Se puede buscar y ordenar tanto desde la url como desde la interfaz de usuario.
 Ejemplos:
 
 ```
-http://localhost:5000/api/products?sort=asc
+http://localhost:5000/products?sort=asc
 ```
-http://localhost:5000/api/products?query=stickers
+http://localhost:5000/products?query=Stickers
 
 
-- [x] Gestión de carrito con vista .hbs para implementar conceptos vistos como "populate" de Mongoose, ("poblar" con los productos del id del cart), se suma botón de agregar producto al carrito y botón para eliminar producto desde el carrito.
+- [x] Gestión de carrito con vista .hbs para implementar conceptos vistos como "populate" de Mongoose, ("poblar" con los productos del id del cart), se suma botón de agregar producto al carrito y botón para eliminar producto desde el carrito, y eliminar el cart completo.
 
 
 <br>

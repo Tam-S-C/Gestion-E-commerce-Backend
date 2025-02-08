@@ -51,7 +51,7 @@ viewsRouter.get("/carts/:cid", async (req, res) => {
         if (!cart) {
             return res.render("carts", { error: "El carrito no existe" });
         }
-        res.render("carts", { cart, cartId: cid });  // Pasar cartId a la vista
+        res.render("carts", { cart, cartId: cid }); 
     } catch (error) {
         console.error("Error al obtener el carrito:", error);
         res.render("carts", { error: "Error al obtener el carrito" });

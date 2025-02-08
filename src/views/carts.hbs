@@ -39,7 +39,6 @@
 
 <script>
   document.addEventListener('DOMContentLoaded', function() {
-    // Eliminar un producto
     const buttons = document.querySelectorAll(".remove-from-cart");
     
     buttons.forEach(button => {
@@ -73,7 +72,6 @@
       });
     });
 
-    // Eliminar todo el carrito
     const clearCartButton = document.getElementById("clear-cart");
     if (clearCartButton) {
       clearCartButton.addEventListener("click", async () => {
